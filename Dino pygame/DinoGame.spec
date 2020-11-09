@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['DinoGame.py'],
-             pathex=['D:\\python\\Dino pygame'],
+             pathex=['/home/tim/DinoGame/Dino pygame'],
              binaries=[],
              datas=[],
              hiddenimports=[],

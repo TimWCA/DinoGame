@@ -1,5 +1,7 @@
+import sys
 import pygame
 import random
+from pygame.locals import *
 
 pygame.init()
 
@@ -7,7 +9,7 @@ display_width = 800
 display_height = 600
 
 display = pygame.display.set_mode((display_width, display_height))
-pygame.display.set_caption('Run dino! Run!') # Grammar mistake fixed
+pygame.display.set_caption('Run, dino! Run!') # Grammar mistake fixed
 
 jump_sound = pygame.mixer.Sound('Rrr.wav')
 fall_sound = pygame.mixer.Sound('Bdish.wav')
@@ -78,9 +80,9 @@ class Button:
                 pygame.mixer.Sound.play(button_sound)
                 pygame.time.delay(300)
                 if action is not None:
-                    if action == quit:
+                    if action == sys.exit:
                         pygame.quit()
-                        quit()
+                        sys.exit()
                     else:
                         action()
 
@@ -129,7 +131,7 @@ def show_menu():
 
         display.blit(menu_bckgr, (0, 0))
         start_btn.draw(270, 200, 'Start game', start_game, 50)
-        quit_btn.draw(358, 300, 'QUIT', quit, 50)
+        quit_btn.draw(358, 300, 'QUIT', sys.exit, 50)
 
         pygame.display.update()
         clock.tick(60)
@@ -489,4 +491,4 @@ def hearts_plus(heart):
 
 show_menu()
 pygame.quit()
-quit()
+sys.exit()
