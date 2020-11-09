@@ -7,13 +7,13 @@ display_width = 800
 display_height = 600
 
 display = pygame.display.set_mode((display_width, display_height))
-pygame.display.set_caption('Ran dino ! Ran!')
+pygame.display.set_caption('Run dino! Run!') # Grammar mistake fixed
 
-jump_sound = pygame.mixer.Sound('Rrr.mp3')
-fall_sound = pygame.mixer.Sound('Bdish.mp3')
-loss_sound = pygame.mixer.Sound('loss.mp3')
-heart_plus_sound = pygame.mixer.Sound('hp+.mp3')
-button_sound = pygame.mixer.Sound('button.mp3')
+jump_sound = pygame.mixer.Sound('Rrr.wav')
+fall_sound = pygame.mixer.Sound('Bdish.wav')
+loss_sound = pygame.mixer.Sound('loss.wav')
+heart_plus_sound = pygame.mixer.Sound('hp+.wav')
+button_sound = pygame.mixer.Sound('button.wav')
 
 icon = pygame.image.load('icon.png')
 pygame.display.set_icon(icon)
@@ -113,7 +113,7 @@ max_above = 0
 def show_menu():
     menu_bckgr = pygame.image.load('Menu.jpg')
 
-    pygame.mixer.music.load('Big_Slinker.mp3')
+    pygame.mixer.music.load('Big_Slinker.wav')
     pygame.mixer.music.set_volume(0.3)
     pygame.mixer.music.play(-1)
 
@@ -149,7 +149,7 @@ def start_game():
 def game_cycle():
     global make_jump
 
-    pygame.mixer.music.load('background.mp3')
+    pygame.mixer.music.load('background.wav')
     pygame.mixer.music.set_volume(0.3)
 
     pygame.mixer.music.play(-1)
