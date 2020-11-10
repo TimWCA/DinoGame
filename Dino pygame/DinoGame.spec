@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['DinoGame.py'],
-             pathex=['Z:\\home\\tim\\DinoGame\\Dino pygame'],
+             pathex=['C:\\Users\\Пользователь\\Documents\\GitHub\\DinoGame\\Dino pygame'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -30,4 +30,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False )
+          console=True )
