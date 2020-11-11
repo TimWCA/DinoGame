@@ -6,7 +6,7 @@ SPACE to jump
 ESC to pause
 
 # Game Rules
-Player has 3 lifes. When player touch a cactus he lost 1 life. To get new lifes player may jump to hearts.
+Player has 3 lifes. When player touch a cactus he lost 1 life. To get new lifes player may jump to the hearts.
 
 Play and get enjoy!
 
