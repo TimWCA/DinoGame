@@ -180,6 +180,7 @@ def game_cycle():
 
         display.blit(land, (0, 0))
         print_text('Баллы: ' + str(scors), 600, 10)
+        print_text2('Версия: V 1.1 ', 10, 580)
 
 
         draw_array(cactus_arr)
@@ -324,6 +325,12 @@ def print_text(message, x, y, font_color = (0, 0, 0), font_type = '19681.ttf', f
     display.blit(text, (x, y))
 
 
+def print_text2(message, x, y, font_color = (0, 0, 0), font_type = 'cirilica.otf', font_size = 20):
+    font_type = pygame.font.Font(font_type, font_size)
+    text = font_type.render(message, True, font_color)
+    display.blit(text, (x, y))
+
+
 def pause():
     paused =True
 
@@ -335,7 +342,7 @@ def pause():
                 pygame.quit()
                 quit()
 
-        print_text('Пауза. Нажмите Enter, чтобы продолжить', 60, 300)
+        print_text('Пауза. Нажмите Enter, чтобы продолжить', 20, 300)
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_RETURN]:
