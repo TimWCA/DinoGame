@@ -31,7 +31,7 @@ dino_img = [pygame.image.load('Dino0.png'), pygame.image.load('Dino1.png'), pyga
 
 
 health_img = pygame.image.load('heart.png')
-health_img = pygame.transform.scale(health_img, (30, 30))
+health_img = pygame.transform.scale(health_img, (40, 40))
 
 img_counter = 0
 health = 2
