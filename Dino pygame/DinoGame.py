@@ -126,7 +126,7 @@ def show_menu():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                quit()
+                sys.exit()
 
         display.blit(menu_bckgr, (0, 0))
         start_btn.draw(270, 200, 'Начать Игру', start_game, 50)
@@ -170,7 +170,7 @@ def game_cycle():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                quit()
+                sys.exit()
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE]:
@@ -340,7 +340,7 @@ def pause():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                quit()
+                sys.exit()
 
         print_text('Пауза. Нажмите Enter, чтобы продолжить', 20, 300)
 
@@ -443,7 +443,7 @@ def game_over():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                quit()
+                sys.exit()
 
         print_text('Игра завершена.', 300, 200)
         print_text('Нажмите Enter, чтобы играть снова,', 70, 250)
