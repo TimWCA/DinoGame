@@ -118,8 +118,8 @@ def show_menu():
     pygame.mixer.music.set_volume(0.3)
     pygame.mixer.music.play(-1)
 
-    start_btn = Button(288, 70)
-    quit_btn = Button (120, 70)
+    start_btn = Button(250, 70)
+    quit_btn = Button (130, 70)
 
     show = True
     while show:
@@ -129,8 +129,8 @@ def show_menu():
                 quit()
 
         display.blit(menu_bckgr, (0, 0))
-        start_btn.draw(270, 200, 'Start game', start_game, 50)
-        quit_btn.draw(358, 300, 'QUIT', sys.exit, 50)
+        start_btn.draw(270, 200, 'Начать Игру', start_game, 50)
+        quit_btn.draw(328, 350, 'Выйти', sys.exit, 50)
 
         pygame.display.update()
         clock.tick(60)
@@ -155,6 +155,7 @@ def game_cycle():
 
     pygame.mixer.music.play(-1)
 
+
     game = True
     cactus_arr = []
     create_cactus_arr(cactus_arr)
@@ -178,7 +179,7 @@ def game_cycle():
         count_scores(cactus_arr)
 
         display.blit(land, (0, 0))
-        print_text('Scores: ' + str(scors), 600, 10)
+        print_text('Баллы: ' + str(scors), 600, 10)
 
 
         draw_array(cactus_arr)
@@ -317,7 +318,7 @@ def draw_dino():
     img_counter += 1
 
 
-def print_text(message, x, y, font_color = (0, 0, 0), font_type = 'PingPong.ttf', font_size = 30):
+def print_text(message, x, y, font_color = (0, 0, 0), font_type = '19681.ttf', font_size = 50):
     font_type = pygame.font.Font(font_type, font_size)
     text = font_type.render(message, True, font_color)
     display.blit(text, (x, y))
@@ -334,7 +335,7 @@ def pause():
                 pygame.quit()
                 quit()
 
-        print_text('Paused. Press enter to continue', 160, 300)
+        print_text('Пауза. Нажмите Enter, чтобы продолжить', 60, 300)
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_RETURN]:
@@ -437,8 +438,10 @@ def game_over():
                 pygame.quit()
                 quit()
 
-        print_text('Game Over. Press Enter to play again, Esc to exit', 40, 300)
-        print_text('Max scores: ' + str(max_scors), 300, 350)
+        print_text('Игра завершена.', 300, 200)
+        print_text('Нажмите Enter, чтобы играть снова,', 70, 250)
+        print_text(' Esc чтобы выйти', 280, 300)
+        print_text('Max scores: ' + str(max_scors), 310, 350)
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_RETURN]:
