@@ -120,6 +120,7 @@ def show_menu():
 
     start_btn = Button(250, 70)
     quit_btn = Button (130, 70)
+    setings_btn = Button(230, 70)
 
     show = True
     while show:
@@ -128,9 +129,12 @@ def show_menu():
                 pygame.quit()
                 sys.exit()
 
+
         display.blit(menu_bckgr, (0, 0))
         start_btn.draw(270, 200, 'Начать Игру', start_game, 50)
-        quit_btn.draw(328, 350, 'Выйти', sys.exit, 50)
+        setings_btn.draw(280, 300, 'Настройки', settings_menu, 50)
+        quit_btn.draw(328, 400, 'Выйти', sys.exit, 50)
+
 
         pygame.display.update()
         clock.tick(60)
@@ -180,7 +184,7 @@ def game_cycle():
 
         display.blit(land, (0, 0))
         print_text('Баллы: ' + str(scors), 600, 10)
-        print_text2('Версия: V 1.1 ', 10, 580)
+        print_text2('Версия: V 2.0 ', 10, 580)
 
 
         draw_array(cactus_arr)
@@ -202,12 +206,13 @@ def game_cycle():
             pygame.mixer.music.stop()
             pygame.mixer.Sound.play(jump_sound)
             game = False
-
+                
+    
         show_health()
-
         pygame.display.update()
         clock.tick(70)
     return game_over()
+
 
 
 def jump():
@@ -332,15 +337,17 @@ def print_text2(message, x, y, font_color = (0, 0, 0), font_type = 'cirilica.otf
 
 
 def pause():
-    paused =True
-
+    paused = True
     pygame.mixer.music.pause()
+    
 
     while paused:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+
+
 
         print_text('Пауза. Нажмите Enter, чтобы продолжить', 20, 300)
 
@@ -498,6 +505,25 @@ def hearts_plus(heart):
             heart.return_self(radius, heart.y, heart.width, heart.image)
 
 
+def settings_menu():
+    global settings
+    settings_bckgr = pygame.image.load('settings_menu.png')
+    back_btn = Button(150, 70)
+
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+        display.blit(settings_bckgr, (0, 0))
+        back_btn.draw(40, 500, 'Назад', show_menu, 50)
+
+        pygame.display.update()
+        clock.tick(60)
+
+
 show_menu()
+settings_menu()
 pygame.quit()
 sys.exit()
