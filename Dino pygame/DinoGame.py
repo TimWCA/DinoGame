@@ -129,6 +129,7 @@ def show_menu():
                 pygame.quit()
                 sys.exit()
 
+
         display.blit(menu_bckgr, (0, 0))
         start_btn.draw(270, 200, 'Начать Игру', start_game, 50)
         setings_btn.draw(280, 300, 'Настройки', settings_menu, 50)
@@ -205,6 +206,12 @@ def game_cycle():
             pygame.mixer.music.stop()
             pygame.mixer.Sound.play(jump_sound)
             game = False
+
+            keys = pygame.key.get_pressed()
+
+            if keys[pygame.K_TAB]:
+                need_input
+                
 
         show_health()
         pygame.display.update()
@@ -503,6 +510,7 @@ def hearts_plus(heart):
 def settings_menu():
     global settings
     settings_bckgr = pygame.image.load('settings_menu.png')
+    back_btn = Button(150, 70)
 
     while True:
         for event in pygame.event.get():
@@ -511,6 +519,7 @@ def settings_menu():
                 sys.exit()
 
         display.blit(settings_bckgr, (0, 0))
+        back_btn.draw(40, 500, 'Назад', show_menu, 50)
 
         pygame.display.update()
         clock.tick(60)
