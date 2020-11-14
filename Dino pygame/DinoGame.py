@@ -206,17 +206,13 @@ def game_cycle():
             pygame.mixer.music.stop()
             pygame.mixer.Sound.play(jump_sound)
             game = False
-
-            keys = pygame.key.get_pressed()
-
-            if keys[pygame.K_TAB]:
-                need_input
                 
-
+    
         show_health()
         pygame.display.update()
         clock.tick(70)
     return game_over()
+
 
 
 def jump():
@@ -341,15 +337,17 @@ def print_text2(message, x, y, font_color = (0, 0, 0), font_type = 'cirilica.otf
 
 
 def pause():
-    paused =True
-
+    paused = True
     pygame.mixer.music.pause()
+    
 
     while paused:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+
+
 
         print_text('Пауза. Нажмите Enter, чтобы продолжить', 20, 300)
 
@@ -523,7 +521,6 @@ def settings_menu():
 
         pygame.display.update()
         clock.tick(60)
-
 
 
 show_menu()
